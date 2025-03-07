@@ -1,0 +1,5 @@
+- hosts: all
+  tasks:
+    - shell: cargo test
+      args:
+        chdir: "{{ zuul.project.src_dir }}"

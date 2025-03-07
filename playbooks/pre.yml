@@ -1,0 +1,10 @@
+- hosts: all
+  roles:
+    - ensure-rust
+
+  tasks:
+    - name: Install dependencies
+      become: true
+      package:
+        name: build-essential
+        state: present

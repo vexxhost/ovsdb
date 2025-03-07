@@ -1,0 +1,23 @@
+- job:
+    name: ovsdb-cargo
+    pre-run: playbooks/pre.yml
+
+- job:
+    name: ovsdb-cargo-test
+    parent: ovsdb-cargo
+    run: playbooks/test.yml
+
+- job:
+    name: ovsdb-cargo-clippy
+    parent: ovsdb-cargo
+    run: playbooks/clippy.yml
+
+- project:
+    check:
+      jobs:
+        - ovsdb-cargo-test
+        - ovsdb-cargo-clippy
+    gate:
+      jobs:
+        - ovsdb-cargo-test
+        - ovsdb-cargo-clippy

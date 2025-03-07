@@ -1,0 +1,23 @@
+[package]
+name = "ovsdb-derive"
+version = "0.0.1"
+edition = "2021"
+description = "Derive macro for OVSDB table structs"
+license = "Apache-2.0"
+keywords = ["ovsdb", "derive", "macro"]
+categories = ["database"]
+repository = "https://review.vexxhost.dev/plugins/gitiles/ovsdb"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = { version = "2.0", features = ["full", "extra-traits"] }
+quote = "1.0"
+proc-macro2 = "1.0"
+ovsdb-schema = { version = "0.0.1", path = "../schema" }
+
+[dev-dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "1.0", features = ["v4"] }
