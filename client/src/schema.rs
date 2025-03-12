@@ -41,7 +41,7 @@ pub struct ColumnSchema {
     pub mutable: Option<bool>,
 }
 
-#[derive(Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize)]
 pub struct MonitorRequest {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub columns: Option<Vec<String>>,
@@ -50,7 +50,7 @@ pub struct MonitorRequest {
     pub select: Option<MonitorRequestSelect>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct MonitorRequestSelect {
     initial: Option<bool>,
     insert: Option<bool>,
