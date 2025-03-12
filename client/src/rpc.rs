@@ -36,6 +36,17 @@ pub trait Rpc {
         matcher: Option<&str>,
         requests: HashMap<String, MonitorRequest>,
     ) -> Result<TableUpdate<serde_json::Value>, ErrorObjectOwned>;
+
+    /// 4.1.11.  Echo
+    ///
+    /// The "echo" method can be used by both clients and servers to verify
+    /// the liveness of a database connection.  It MUST be implemented by
+    /// both clients and servers.
+    #[method(name = "echo")]
+    async fn echo(
+        &self,
+        data: Vec<serde_json::Value>,
+    ) -> Result<Vec<serde_json::Value>, ErrorObjectOwned>;
 }
 
 pub async fn connect_tcp(
