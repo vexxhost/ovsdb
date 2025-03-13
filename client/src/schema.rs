@@ -59,9 +59,9 @@ pub struct MonitorRequestSelect {
 }
 
 pub type TableUpdate<T> = HashMap<String, TableUpdateRows<T>>;
-pub type TableUpdateRows<T> = HashMap<String, T>;
+pub type TableUpdateRows<T> = HashMap<String, RowUpdate<T>>;
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct RowUpdate<T> {
     pub old: Option<T>,
     pub new: Option<T>,
