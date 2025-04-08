@@ -15,7 +15,7 @@ jsonrpsee = { version = "0.24.8", features = ["async-client", "client-core", "ma
 serde = "1.0.218"
 serde_json = "1.0.140"
 thiserror = "2.0.12"
-tokio = { version = "1.43.0", features = ["net", "rt-multi-thread"] }
+tokio = { version = "1.43.1", features = ["net", "rt-multi-thread"] }
 tokio-util = { version = "0.7.13", features = ["codec"] }
 
 [dev-dependencies]
