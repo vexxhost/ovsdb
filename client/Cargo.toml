@@ -9,7 +9,7 @@ categories = ["database", "network-programming", "api-bindings", "asynchronous"]
 repository = "https://review.vexxhost.dev/plugins/gitiles/ovsdb"
 
 [dependencies]
-bytes = "1.10.1"
+bytes = "1.11.1"
 futures-util = { version = "0.3.31" }
 jsonrpsee = { version = "0.24.8", features = ["async-client", "client-core", "macros"] }
 serde = "1.0.218"
